@@ -54,7 +54,7 @@
     <input type="hidden" name="_subject" value="Nouveau message depuis le CV en ligne">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="true">
-    <input type="hidden" name="_next" value="https://a-talemci.github.io/cv/contact.html?envoye=1">
+    <input type="hidden" name="_next" value="https://a-talemci.github.io/cv/index.html?envoye=1">
     <!-- Piège anti-spam (honeypot), doit rester vide -->
     <input type="text" name="_honey" style="display:none">
 
@@ -85,10 +85,6 @@
 
     <button type="submit" class="cta">Envoyer le message</button>
   </form>
-
-  <p id="confirmation-message" class="form-confirmation">
-    ✅ Merci, votre message a bien été envoyé ! Je vous répondrai au plus vite.
-  </p>
 </section>
 
 </main>
@@ -98,11 +94,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  // Affiche un message de confirmation après redirection FormSubmit (?envoye=1)
-  if (new URLSearchParams(window.location.search).get('envoye') === '1') {
-    document.getElementById('confirmation-message').style.display = 'block';
-  }
-</script>
 </body>
 </html>

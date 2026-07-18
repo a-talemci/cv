@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<div id="success-banner" class="success-banner" role="status">
+  ✅ Merci, votre message a bien été envoyé ! Je vous répondrai au plus vite.
+</div>
+
 <button id="theme-toggle" aria-label="Changer de thème">🌙</button>
 
 <header class="hero">
@@ -202,5 +206,15 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // Affiche la bannière de succès après redirection FormSubmit (?envoye=1)
+  if (new URLSearchParams(window.location.search).get('envoye') === '1') {
+    document.getElementById('success-banner').classList.add('visible');
+    history.replaceState(null, '', window.location.pathname);
+    setTimeout(() => {
+      document.getElementById('success-banner').classList.remove('visible');
+    }, 6000);
+  }
+</script>
 </body>
 </html>
